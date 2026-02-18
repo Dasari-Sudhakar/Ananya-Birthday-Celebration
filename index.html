@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananya — A Birthday Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Tenor+Sans&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Grain texture -->
+    <div class="grain"></div>
+
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Ambient background -->
+    <div class="ambient">
+        <div class="ambient-orb a"></div>
+        <div class="ambient-orb b"></div>
+    </div>
+
+    <!-- Intro -->
+    <div id="netflix-intro" class="intro-screen active">
+        <div class="intro-inner">
+            <p class="intro-eyebrow">Celebrating Birthday of</p>
+            <h1 class="intro-title">Ananya</h1>
+            <div class="intro-rule"></div>
+            <p class="intro-sub">By Sudhakar &amp; Rakshit</p>
+        </div>
+    </div>
+
+    <!-- Tap to start — unlocks audio context -->
+    <div id="tap-prompt" class="tap-prompt" onclick="userStarted()">
+        <div class="tap-inner">
+            <div class="tap-ring"></div>
+            <p class="tap-eyebrow">Tap anywhere to begin</p>
+            <h2 class="tap-title">Start the Experience</h2>
+            <div class="tap-rule"></div>
+            <p class="tap-sub">With sound &amp; music</p>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div id="main-content" class="hidden">
+        <canvas id="fireworks-canvas"></canvas>
+
+        <div class="confetti-container left"  id="confetti-left"></div>
+        <div class="confetti-container right" id="confetti-right"></div>
+
+        <!-- Header -->
+        <header class="site-header">
+            <p class="header-eyebrow">Celebrating</p>
+            <h1 class="birthday-title">Ananya's Birthday</h1>
+        </header>
+
+        <!-- Dynamic frame -->
+        <div class="frame-wrapper" id="frameWrapper">
+            <div class="corner-bl"></div>
+            <div class="corner-br"></div>
+            <div class="frame-inner">
+                <div id="photo-slideshow" class="slideshow">
+                    <img id="current-photo" class="photo" src="" alt="">
+                    <span class="photo-index" id="photo-index"></span>
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <video id="video-player" class="video-player hidden" playsinline></video>
+            </div>
+        </div>
+
+        <!-- Slideshow music -->
+        <audio id="photo-music" loop>
+            <source src="birthday.mpeg" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Modal -->
+    <div id="popup-modal" class="modal">
+        <div class="modal-inner">
+            <div class="modal-rule"></div>
+            <h2 class="modal-text">Are you ready for the main event?</h2>
+            <p class="modal-sub">The experience continues</p>
+        </div>
+    </div>
+
+    <!-- Final wish -->
+    <div id="final-wish" class="final-screen">
+        <h1 class="final-text">Once again, happy birthday Ananya</h1>
+        <div class="final-rule"></div>
+    </div>
+
+    <!-- Ending -->
+    <div id="ending-screen" class="final-screen">
+        <p class="ending-eyebrow">For</p>
+        <h1 class="ending-name">Ananya</h1>
+        <div class="final-rule"></div>
+        <button class="restart-btn" id="restart-btn" onclick="restartExperience()">
+            <span class="restart-icon">&#x21BA;</span>
+            <span class="restart-label">Play Again</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
